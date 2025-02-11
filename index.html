@@ -17,7 +17,13 @@
         .contenedor-propuesta {
             text-align: center;
             padding: 20px;
-            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            z-index: 3;
         }
 
         h1 {
@@ -146,7 +152,8 @@
 
         .ears { position: relative; left: -4px; z-index: 1; }
         .ear { position: absolute; width: 20px; height: 20px; border-radius: 50%; background-color: #ffd400; }
-        .ear.right { right: 10px; } .ear.left { left: 10px; }
+        .ear.right { right: 10px; } 
+        .ear.left { left: 10px; }
         .head { position: relative; top: 10px; z-index: 1; }
         .face-cone { position: absolute; left: 16px; background: #ffd400; width: 60px; height: 10px; border-radius: 30px 30px 0 0; }
         .face-trap { position: absolute; top: 10px; left: 1px; border-bottom: 40px solid #ffd400; border-left: 15px solid transparent; border-right: 15px solid transparent; height: 0; width: 60px; }
@@ -158,7 +165,8 @@
         .eyebrow.left { top: 2px; left: 18px; transform: rotate(-10deg); }
         .eyes { position: relative; top: 40px; animation: look-around 5s infinite; }
         .eye { position: absolute; width: 6px; height: 7px; background-color: black; border-radius: 50%; }
-        .eye.right { right: 28px; } .eye.left { left: 25px; }
+        .eye.right { right: 28px; } 
+        .eye.left { left: 25px; }
         .nose { position: relative; top: 50px; left: 42px; width: 10px; height: 10px; background-color: black; border-radius: 20% 20% 50% 50%; }
         .hands { position: relative; top: 80px; }
         .hand { position: absolute; width: 20px; height: 40px; border-radius: 0 0 20px 20px; background: #ffd400; }
@@ -172,7 +180,8 @@
         .body { position: relative; left: 5px; top: 73px; width: 81px; height: 55px; border-radius: 0 0 80px 80px; background: #ffd400; }
         .legs { position: relative; top: 40px; }
         .leg { position: absolute; width: 21px; height: 60px; background: #ffd400; border-radius: 0 0 30px 30px; }
-        .leg.right { right: 20px; } .leg.left { left: 12px; }
+        .leg.right { right: 20px; } 
+        .leg.left { left: 12px; }
         .feet { position: relative; top: 90px; }
         .foot { position: absolute; width: 32px; height: 15px; background: #ffd400; }
         .foot.right { right: 20px; border-radius: 30px 5px; }
@@ -203,6 +212,15 @@
             20%, 60% { top: 14px; }
             0%, 100% { top: 12px; }
         }
+
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 480px) {
+            .pooh-container {
+                right: 20px;
+                bottom: 20px;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -219,7 +237,7 @@
         <div class="corazon"></div>
         <div class="mensaje-corazon">¡Gracias, sabía que ibas a aceptar!<br>Te amo 💖</div>
         
-        <!-- TULIPANES (tu código exacto) -->
+        <!-- TULIPANES (tu código exacto modificado) -->
         <div class="tulipanes">
             <div class="tulipan">
                 <div class="petal1"></div>
@@ -280,7 +298,7 @@
             document.getElementById('propuesta').style.display = 'none';
             document.getElementById('corazonContenedor').style.display = 'block';
             
-            // Agregar efecto de nieve
+            // Agregar efecto de corazones cayendo
             function crearCorazon() {
                 const corazon = document.createElement('div');
                 corazon.innerHTML = '❤️';
